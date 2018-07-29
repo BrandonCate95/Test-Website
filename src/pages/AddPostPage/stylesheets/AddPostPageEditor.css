@@ -1,0 +1,53 @@
+.custom-theme.fr-toolbar{
+    border-top: none;
+    border-bottom: 2px solid #e4e4e4
+}
+
+.fr-placeholder{
+    margin-top: 0 !important;
+}
+
+.custom-theme.fr-box.fr-basic .fr-element {
+    font-size: 24px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    color: rgb(73, 73, 73);
+    text-align: left;
+    padding: 0;
+}
+
+.fr-wrapper {
+    margin-top: 10px;
+}
+
+.fr-wrapper.show-placeholder > div > a{
+    display: none !important;
+}
+
+.custom-theme.fr-toolbar {
+    position: fixed !important;
+    top: 48px !important;
+    left: 0;
+    width: 100%;
+    z-index: 3 !important;
+    padding: 0 25%;
+}
+
+.toolbar-hidden-title {
+    margin-top: 10px !important;
+}
+
+.fr-popup .fr-color-set.fr-selected-set {
+    padding: 6px;
+}
+
+.fr-popup .fr-color-hex-layer .fr-action-buttons button {
+    background-color: #FFF;
+}
+
+.fr-popup {
+    z-index: 2 !important;
+}
+
+.fr-handler {
+    z-index: 2 !important;
+}

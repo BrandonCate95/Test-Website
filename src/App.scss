@@ -1,0 +1,364 @@
+
+$mdc-theme-primary--light: #9e47ff;
+$mdc-theme-primary--dark: #0400ba;
+
+$mdc-theme-secondary--light: #4fb7b6;
+$mdc-theme-secondary--dark: #005959;
+
+$mdc-theme-tertiary: #FF5A5F;
+$mdc-theme-tertiary--light: #ff8e8c;
+$mdc-theme-tertiary--dark: #c62035;
+
+$mdc-theme-neutral: rgba(0, 0, 0, 0.438);
+
+$mdc-theme-neutral--color: rgba(0, 0, 0, 0.54);
+
+$mdc-theme-border--light: 1px solid #e4e4e4;
+
+$mdc-theme-background--grey-light: #f8f8f8;
+
+$mdc-typography-styles-headline1: (
+  color: #3f3f3f
+);
+$mdc-typography-styles-headline2: (
+  color: #444444
+);
+$mdc-typography-styles-headline3: (
+  color: #474747
+);
+
+$mdc-typography-styles-headline4: (
+  color: #4b4b4b
+);
+
+$mdc-typography-styles-headline5: (
+  color: #4e4e4e
+);
+
+$mdc-typography-styles-headline6: (
+  color: #525151
+);
+
+$mdc-typography-styles-subtitle2: (
+  color: #636363
+);
+
+@import "@material/react-button/index";
+@import "@material/react-material-icon/index";
+@import "@material/react-text-field/index";
+@import "@material/react-top-app-bar/index";
+@import "@material/react-card/index";
+
+@import "@material/icon-button/mdc-icon-button";
+@import "@material/menu/mdc-menu";
+@import "@material/list/mdc-list";
+@import "@material/drawer/mdc-drawer";
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/card/mdc-card";
+@import "@material/tabs/mdc-tabs";
+@import "@material/dialog/mdc-dialog";
+
+@import "@material/elevation/mdc-elevation";
+@import "@material/typography/mdc-typography";
+
+//color classes
+
+.mdc-theme-primary--color{
+  color: $mdc-theme-primary !important;
+}
+
+.mdc-theme-primary--light-color{
+  color: $mdc-theme-primary--dark !important;
+}
+
+.mdc-theme-secondary--color{
+  color: $mdc-theme-secondary !important;
+}
+
+.mdc-theme-neutral--color{
+  color: $mdc-theme-neutral--color !important;
+}
+
+.mdc-theme-tertiary--dark-color{
+  color: $mdc-theme-tertiary--dark !important;
+}
+
+.mdc-theme-primary{
+  color: $mdc-theme-primary !important;
+  border-color: $mdc-theme-primary !important;
+  &.mdc-button--raised{
+    background-color: $mdc-theme-primary !important;
+    color: white !important;    
+  }
+  &::after, &::before{
+    background-color: $mdc-theme-primary !important;
+  }
+}
+
+.mdc-theme-secondary{
+  color: $mdc-theme-secondary !important;
+  border-color: $mdc-theme-secondary !important;
+  &.mdc-button--raised{
+    background-color: $mdc-theme-secondary !important;
+    color: white !important;    
+  }
+  &::after, &::before{
+    background-color: $mdc-theme-secondary !important;
+  }
+}
+
+.mdc-theme-tertiary{
+  color: $mdc-theme-tertiary !important;
+  border-color: $mdc-theme-tertiary !important;
+  &.mdc-button--raised{
+    background-color: $mdc-theme-tertiary !important;
+    color: white !important;    
+  }
+  &::after, &::before{
+    background-color: $mdc-theme-tertiary !important;
+  }
+}
+
+.mdc-theme-neutral{
+  color: $mdc-theme-neutral--color !important;
+  border-color: $mdc-theme-neutral !important;
+  &.mdc-button--raised{
+    background-color: $mdc-theme-neutral !important;
+    color: white !important;    
+  }
+  &::after, &::before{
+    background-color: $mdc-theme-neutral !important;
+  }
+}
+
+.mdc-theme-tertiary--dark{
+  color: $mdc-theme-tertiary--dark !important;
+  border-color: $mdc-theme-tertiary--dark !important;
+  &.mdc-button--raised{
+    background-color: $mdc-theme-tertiary--dark !important;
+    color: white !important;    
+  }
+  &::after, &::before{
+    background-color: $mdc-theme-tertiary--dark !important;
+  }
+}
+
+.mdc-theme-neutral--background{
+  background-color: $mdc-theme-neutral !important;
+  color: white !important;
+}
+
+.mdc-theme-tertiary--background{
+  background-color: $mdc-theme-tertiary !important;
+  color: white !important;
+  &.mdc-button--outlined{
+    background-color: white !important;
+    &::after, &::before{
+      background-color: white !important;
+    }
+    color: $mdc-theme-tertiary !important;
+    border-color: $mdc-theme-tertiary !important;
+  }
+}
+
+.mdc-theme-tertiary--dark-background{
+  background-color: $mdc-theme-tertiary--dark !important;
+  color: white;
+}
+
+.mdc-theme-background--grey-light{
+  background-color: $mdc-theme-background--grey-light;
+}
+
+
+.mdc-theme-border--light{
+  border: $mdc-theme-border--light;
+}
+
+//end of color classes
+
+.custom-theme.fr-popup, .fr-popup{
+  border-top-color: $mdc-theme-primary;
+}
+
+.img-popup-active {
+  color: $mdc-theme-secondary--light !important;
+}
+
+.mdc-button:focus::before, .mdc-icon-button:focus::before{
+  opacity: 0 !important;
+}
+
+.mdc-icon-button{
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.mdc-top-app-bar--fixed-scrolled{
+  box-shadow: none !important;
+}
+
+.mdc-icon-button:hover::before{
+  opacity: 0;
+}
+
+.mdc-icon-button:disabled{
+  color: rgba(0, 0, 0, 0.38);
+  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)) !important;
+  cursor: default;
+  pointer-events: none;
+}
+
+.img-width-100, .no-image-uploaded{
+  width: 100% !important;
+}
+
+.img-height-100{
+  height: 100% !important;
+}
+
+.mdc-top-app-bar-add-post-page{
+  box-shadow: none;
+}
+
+.panel{
+  display: none;
+  &.active{
+      display: block;
+  }
+}
+
+.mdc-top-app-bar div section .material-icons::before,
+.mdc-top-app-bar div section .material-icons::after{
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.mdc-top-app-bar div section .mdc-ripple-bounded--small.material-icons::before,
+.mdc-top-app-bar div section .mdc-ripple-bounded--small.material-icons::after{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mdc-top-app-bar{
+  background-color: $mdc-theme-on-primary;
+  color: $mdc-theme-primary;
+  border-bottom: 1px solid #e4e4e4;
+  div section .material-icons{
+    color: $mdc-theme-primary;
+    @include mdc-ripple-surface;
+    @include mdc-ripple-radius-bounded;
+    @include mdc-states;
+    @include mdc-states-hover-opacity(0);
+  }
+}
+
+.main-header-q{
+  color: $mdc-theme-primary;
+}
+
+.main-header-p{
+  color: $mdc-theme-secondary;
+}
+
+.main-header-l{
+  color: $mdc-theme-tertiary;
+}
+
+html, body, #root, .awsappsync--rehydrated {
+  height: 100%;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.content{
+  display:inline-block;
+}
+
+.margin-none{
+  margin:0;
+}
+
+.padding-none{
+  padding:0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@mixin aspect-ratio($ratio-or-width, $height: null) {
+  $botPadding: if($height, percentage($height/$ratio-or-width), percentage(1/$ratio-or-width));
+  &:before { content:''; float: left; padding-bottom: $botPadding; }
+  &:after  { content:''; display: table; clear: both;  } 
+}
+
+.img-container--16-9{
+  @include aspect-ratio(16,9);
+  // ...or by simple ratio
+  // @include aspect-ratio(1.777777778); 
+  img{
+      position: absolute;
+      max-height: 100%;
+      max-width: 100%;
+      height:auto;
+      width:auto;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+  }
+}
+
+.img-container--4-1{
+  @include aspect-ratio(4,1);
+  // ...or by simple ratio
+  // @include aspect-ratio(1.777777778); 
+  div > div{
+    position: static !important;
+  }
+  img{
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    height:100%;
+    width:100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+}

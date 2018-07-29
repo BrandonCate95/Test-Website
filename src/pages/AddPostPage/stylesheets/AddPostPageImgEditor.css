@@ -1,0 +1,120 @@
+.App {
+  text-align: center; }
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.content {
+  display: inline-block; }
+
+.margin-none {
+  margin: 0; }
+
+.padding-none {
+  padding: 0; }
+
+.hidden {
+  display: none !important; }
+
+p .img-width-100 {
+  width: 100% !important; }
+
+p .img-height-100 {
+  height: 100% !important; }
+
+.main-editor-img-container {
+  position: relative; }
+
+.main-editor-img-container:before {
+  content: '';
+  float: left;
+  padding-bottom: 56.25%; }
+
+.main-editor-img-container:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.main-editor-img-container .no-image-uploaded {
+  width: 100% !important; }
+
+.main-editor-img-container .img-width-100 {
+  width: 100% !important; }
+
+.main-editor-img-container .img-height-100 {
+  height: 100% !important; }
+
+.main-editor-img-container img {
+  position: absolute;
+  max-height: 100%;
+  max-width: 100%;
+  height: auto !important;
+  width: auto !important;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto !important;
+  cursor: pointer; }
+
+.fr-img-caption {
+  display: block !important;
+  height: auto !important;
+  width: auto !important; }
+
+.img-popup-active {
+  color: #1e88e5 !important; }
+
+.fr-img-wrap {
+  display: block;
+  position: relative; }
+
+.fr-img-wrap:before {
+  content: '';
+  float: left;
+  padding-bottom: 56.25%; }
+
+.fr-img-wrap:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.fr-img-wrap .img-width-100 {
+  width: 100% !important; }
+
+.fr-img-wrap .img-height-100 {
+  height: 100% !important; }
+
+.fr-img-wrap img {
+  position: relative;
+  max-height: 100%;
+  max-width: 100%;
+  height: auto !important;
+  width: auto !important;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto !important; }
+
+.fr-img-wrap .fr-inner {
+  display: block; }
