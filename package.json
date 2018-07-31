@@ -62,7 +62,7 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server": "node index.js",
+    "server": "npm i && node index.js",
     "prod": "npm i && npm-run-all build server"
   }
 }
