@@ -1,0 +1,19 @@
+{
+	"ProjectName": "web-app",
+	"ProjectPath": "C:\\xampp\\htdocs\\website\\Version2.0\\Web-app",
+	"InitializationTime": "2018-05-10-19-19-13",
+	"LastConfigurationTime": "2018-05-10-19-16-55",
+	"LastNPMInstallTime": "",
+	"FrontendLastBuildTime": "2018-07-24-13-34-34",
+	"LastPublishTime": "2018-07-24-13-35-05",
+	"BackendLastSyncTime": "2018-07-29-09-21-00",
+	"BackendLastBuildTime": "2018-07-29-09-20-55",
+	"BackendLastPushTime": "2018-07-29-09-20-56",
+	"BackendProjectID": "022c12be-b5b7-4024-abd0-21fdb994d920",
+	"BackendProjectName": "web-app-1.0",
+	"BackendProjectConsoleUrl": "https://console.aws.amazon.com/mobilehub/home#/022c12be-b5b7-4024-abd0-21fdb994d920/build",
+	"BackendProjectCreationTime": "2018-05-11T02:17:07.448Z",
+	"BackendProjectLastUpdatedTime": "2018-07-29T16:20:53.534Z",
+	"Framework": "react",
+	"BackendLastSyncToDevTime": "2018-07-29-09-21-00"
+}
