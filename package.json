@@ -32,6 +32,7 @@
     "font-awesome": "^4.7.0",
     "graphql-tag": "^2.9.2",
     "jest": "^23.4.2",
+    "node-sass": "^4.9.2",
     "node-sass-chokidar": "^1.2.2",
     "nodemon": "^1.18.3",
     "npm": "^6.1.0",
