@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: web-app
+    environment: web-app-v1
     group_suffix: null
 environment-defaults:
   web-app:
