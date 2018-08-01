@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { S3Image } from 'aws-amplify-react'
+import OnLoadS3Image from '../../../components/misc/OnLoadS3Image'
 import UserPageTabs from './UserPageTabs'
 import getKeyWithoutPrefix from '../../../utilities/getKeyWithoutPrefix'
 
@@ -64,7 +64,7 @@ const PageLogoContainer = styled.div`
     width: 100%;
 `
 
-const UserLogo = styled(S3Image)`
+const UserLogo = styled(OnLoadS3Image)`
     height: 80px;
     width: 80px;
     border-radius: 50%;
@@ -78,7 +78,7 @@ const TabsContainer = styled.div`
 const UserPageContent = ({data, username, userMatch}) => (
     <Column>
         <PageLogoContainer className="img-container--4-1">
-            <S3Image
+            <OnLoadS3Image
                 level="protected"
                 identityId={data.identityId}
                 imgKey={data.pageImg ? getKeyWithoutPrefix(data.pageImg.file.key) : '#'}

@@ -13,7 +13,7 @@ const SearchSideBarCatagory = (props) => (
     <Link to={`/Search?q=${props.catagoryName}`}
         className="mdc-list-item mdc-theme-neutral"
     >
-        #{props.catagoryName}
+        <span style={{marginLeft: "16px"}}>#{props.catagoryName}</span>
     </Link>
 )
 
@@ -28,10 +28,6 @@ const HeaderContainer = styled.div`
   text-transform: uppercase !important;
 `
 
-const CatagroyContainer = styled.div`
-    margin-left: 16px;
-`
-
 //this is only for testing purposes not actually data passed or retrieved yet
 const SearchSideBarCatagoryList = () => (
     <React.Fragment>
@@ -40,15 +36,13 @@ const SearchSideBarCatagoryList = () => (
         >
             Trending
         </HeaderContainer>
-        <CatagroyContainer>
-            {catagoryData.map((catagory) => 
-                <SearchSideBarCatagory 
-                    key={catagory.catagoryName} 
-                    symbolName={catagory.symbolName} 
-                    catagoryName={catagory.catagoryName}
-                />
-            )}
-        </CatagroyContainer>
+        {catagoryData.map((catagory) => 
+            <SearchSideBarCatagory 
+                key={catagory.catagoryName} 
+                symbolName={catagory.symbolName} 
+                catagoryName={catagory.catagoryName}
+            />
+        )}
     </React.Fragment>
 )
 

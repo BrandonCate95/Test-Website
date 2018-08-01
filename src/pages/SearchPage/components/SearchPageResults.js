@@ -25,7 +25,7 @@ const SearchResults = ({sideBarOpen, data}) => (
                 link={`/${item.userData.username}/${item.postId}`}
                 desc={item.searchDescription} 
                 author={item.userData.username} 
-                logoKey={getKeyWithoutPrefix(item.userData.logoImg.file.key)}
+                logoKey={getKeyWithoutPrefix(item.userData.logoImg.file.key)}zzz
             />
         )}
     </StyledCol>

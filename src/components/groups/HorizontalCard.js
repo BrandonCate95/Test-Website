@@ -62,33 +62,60 @@ const Desc = styled.p`
     margin: 10px;
 `
 
-const HorizontalCard = ({link, identityId, imgKey, title, logoKey, author, desc}) => (
-    <Link to={link} style={{textDecoration: "none", color: "inherit"}}>
-        <StyledCard
-            style={{margin: "10px 0"}}
-        >
-            <ImgContainer className="img-container--16-9">
-                <S3Image 
-                    level="protected"
-                    identityId={identityId}
-                    imgKey={imgKey} 
-                />
-            </ImgContainer>
-            <ContentContainer>
-                <Title className="mdc-typography--headline4">{title}</Title>
-                <UserContainer>
-                    <UserLogo 
-                        level="protected"
-                        identityId={identityId}
-                        imgKey={logoKey}
-                    />
-                    <Author className="mdc-typography--headline6">{author}</Author>
-                </UserContainer>
-                <Desc className="mdc-typography--body1">{desc}</Desc>
-            </ContentContainer>      
-        </StyledCard>
-    </Link>
-)
+const ContainerShowHide = styled.div`
+    opacity: ${props => props.show ? '0' : '1'}
+`
+
+class HorizontalCard extends React.Component {
+
+    state={
+        show: true,
+    }
+
+    componentWillMount = () => {
+        if(this.props.imgKey === '#'){
+            this.handleOnLoad()
+        }
+    }
+
+    handleOnLoad = () => {
+        this.setState({show: false})
+    }
+
+    render(){
+        const {link, identityId, imgKey, title, logoKey, author, desc} = this.props
+        return(
+            <ContainerShowHide show={this.state.show}>
+                <Link to={link} style={{textDecoration: "none", color: "inherit"}}>
+                    <StyledCard
+                        style={{margin: "10px 0"}}
+                    >
+                        <ImgContainer className="img-container--16-9">
+                            <S3Image 
+                                level="protected"
+                                identityId={identityId}
+                                imgKey={imgKey} 
+                                onLoad={this.handleOnLoad.bind(this)}
+                            />
+                        </ImgContainer>
+                        <ContentContainer>
+                            <Title className="mdc-typography--headline4">{title}</Title>
+                            <UserContainer>
+                                <UserLogo 
+                                    level="protected"
+                                    identityId={identityId}
+                                    imgKey={logoKey}
+                                />
+                                <Author className="mdc-typography--headline6">{author}</Author>
+                            </UserContainer>
+                            <Desc className="mdc-typography--body1">{desc}</Desc>
+                        </ContentContainer>      
+                    </StyledCard>
+                </Link>
+            </ContainerShowHide>
+        )
+    }
+}
 
 HorizontalCard.propTypes = {
     link: PropTypes.string.isRequired,

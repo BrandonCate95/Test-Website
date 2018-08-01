@@ -38,51 +38,80 @@ const StyledS3Image = styled(S3Image)`
     max-width: 100%;
 `
 
-const VerticalCard = ({drafts, username, postId, imgKey, identityId, title, logoImg, draftEdit}) => (
-    <CardContainer>
-        <Link 
-            to={{
-                pathname: drafts ? `/AddPage` : `/${username}/${postId}`, 
-                state: { postId },
-            }}
-            style={{textDecoration: "none"}}
-        >
-            <Card>
-                <CardMedia wide>
-                    <StyledS3Image
-                        imgKey={drafts ? `imgs/${imgKey}` : imgKey}
-                        level="protected"
-                        identityId={identityId}
-                    />
-                </CardMedia>                    
-                <h1 
-                    style={{margin: "10px"}} 
-                    className="mdc-typography--headline6"
-                >
-                    {title}
-                </h1>
-                <Row>
-                    <UserLogo 
-                        imgKey={getKeyWithoutPrefix(logoImg.file.key)}
-                        level="protected"
-                        identityId={identityId}
-                    />
-                    <div className="mdc-typography--subtitle2">
-                        {username}
-                    </div>
-                </Row>
-            </Card>
-        </Link>
+const ContainerShowHide = styled.div`
+    opacity: ${props => props.show ? '0' : '1'}
+`
 
-        {draftEdit &&
-            <ButtonsContainer>
-                <GetPost postId={postId}>
-                    <PostCRUDPopups postId={postId} />
-                </GetPost>
-            </ButtonsContainer> 
+class VerticalCard extends React.Component{
+
+    state={
+        show: true,
+    }
+
+    componentWillMount = () => {
+        if(this.props.imgKey === '#'){
+            this.handleOnLoad()
         }
-    </CardContainer>
-)
+    }
+
+    handleOnLoad = () => {
+        this.setState({show: false})
+    }
+
+    render(){
+        const {drafts, username, postId, imgKey, identityId, title, logoImg, draftEdit} = this.props
+        return(
+            
+                <CardContainer>
+                    <ContainerShowHide show={this.state.show}>
+                        <Link 
+                            to={{
+                                pathname: drafts ? `/AddPage` : `/${username}/${postId}`, 
+                                state: { postId },
+                            }}
+                            style={{textDecoration: "none"}}
+                        >
+                            <Card>
+                                <CardMedia wide>
+                                    <StyledS3Image
+                                        imgKey={drafts ? `imgs/${imgKey}` : imgKey}
+                                        level="protected"
+                                        identityId={identityId}
+                                        onLoad={this.handleOnLoad.bind(this)}
+                                    />
+                                </CardMedia>                    
+                                <h1 
+                                    style={{margin: "10px"}} 
+                                    className="mdc-typography--headline6"
+                                >
+                                    {title}
+                                </h1>
+                                <Row>
+                                    <UserLogo 
+                                        imgKey={getKeyWithoutPrefix(logoImg.file.key)}
+                                        level="protected"
+                                        identityId={identityId}
+                                    />
+                                    <div className="mdc-typography--subtitle2">
+                                        {username}
+                                    </div>
+                                </Row>
+                            </Card>
+                        </Link>
+                
+                        {draftEdit &&
+                            <ButtonsContainer>
+                                <GetPost postId={postId}>
+                                    <PostCRUDPopups postId={postId} />
+                                </GetPost>
+                            </ButtonsContainer> 
+                        }
+                    </ContainerShowHide>
+                </CardContainer>
+            
+        )
+    }
+} 
 
 VerticalCard.propTypes = {
     drafts: PropTypes.bool.isRequired,
