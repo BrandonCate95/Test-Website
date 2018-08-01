@@ -34,10 +34,10 @@ build/Release
 
 # Dependency directories
 node_modules/
-!node_modules/react-scripts
-!node_modules/froala-editor
-!node_modules/react-froala-editor
-!node_modules/aws-amplify-react
+!node_modules/react-scripts/
+!node_modules/froala-editor/
+!node_modules/react-froala-editor/
+!node_modules/aws-amplify-react/
 jspm_packages/
 
 # Typescript v1 declaration files
