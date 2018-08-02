@@ -1,0 +1,9 @@
+// all css and scss here
+@import './App.scss';
+
+@import '../node_modules/froala-editor/css/froala_style.min.css';
+@import '../node_modules/froala-editor/css/froala_editor.pkgd.min.css';
+
+@import './pages/AddPostPage/stylesheets/custom-theme.css';
+@import './pages/AddPostPage/stylesheets/AddPostPageEditor.css';
+@import './pages/AddPostPage/stylesheets/AddPostPageImgEditor.css';

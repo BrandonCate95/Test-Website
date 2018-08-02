@@ -47,7 +47,7 @@ class Button extends React.Component {
                 onClick={props.onClick}
                 onMouseEnter={props.onMouseEnter}
                 onMouseLeave={props.onMouseLeave}
-                disabled={props.disabled}
+                disabled={props.disabled || props.loading}
                 aria-pressed={props['aria-pressed']}
             >
                 {props.icon && !props.loading &&

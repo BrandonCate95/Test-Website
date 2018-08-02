@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.4.2",
+    "@material-ui/icons": "^2.0.0",
     "@material/card": "^0.36.1",
     "@material/dialog": "^0.36.1",
     "@material/drawer": "^0.36.1",
@@ -58,8 +60,8 @@
     "uuid": "^3.2.1"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules ./src/App.scss -o ./src",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules --watch ./src/App.scss ./src/App.css",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules ./src/index.scss -o ./src",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules --watch ./src/App.scss ./src/App.css ./src/index.scss ./src/index.css",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",

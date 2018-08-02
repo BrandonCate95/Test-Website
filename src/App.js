@@ -7,7 +7,6 @@ import {
 
 import PrivateRoute from './components/containers/PrivateRoute'
 import PrivateUserRoute from './components/containers/PrivateUserRoute'
-import './App.css'
 import Loadable from 'react-loadable'
 import Spinner from './components/misc/Spinner'
 
@@ -20,7 +19,7 @@ import Spinner from './components/misc/Spinner'
 // import UserEditPage from './pages/UserEditPage'
 // import AuthPage from './pages/AuthPage'
 
-const Loading = () => <div style={{position: "absolute", width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}><Spinner large /></div>
+const Loading = () => <div style={{position: "absolute", width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}><Spinner large primary /></div>
 
 const Home = Loadable({
   loader: () => import('./pages/HomePage'),

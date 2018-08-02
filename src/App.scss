@@ -271,6 +271,8 @@ $mdc-typography-styles-subtitle2: (
 
 html, body, #root, .awsappsync--rehydrated {
   height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .App {

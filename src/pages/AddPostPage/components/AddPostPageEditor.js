@@ -1,10 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import 'froala-editor/js/froala_editor.pkgd.min.js'
-import 'froala-editor/css/froala_style.min.css'
-import 'froala-editor/css/froala_editor.pkgd.min.css'
-import '../stylesheets/custom-theme.css'
-import '../stylesheets/AddPostPageEditor.css'
 import $ from 'jquery'
 import FroalaEditor from 'react-froala-wysiwyg'
 

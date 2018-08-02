@@ -22,7 +22,7 @@ const SearchContent = (props) => (
     >
       {({ loading, error, data, refetch, networkStatus }) => {
         if (error) return `Error!: ${error}`;
-        if (loading) return <StyledLoading><Spinner large /></StyledLoading>
+        if (loading) return <StyledLoading><Spinner large primary/></StyledLoading>
         return (
           <React.Fragment>
             {React.cloneElement(props.children, {loading, error, data, refetch, networkStatus, sideBarOpen: props.sideBarOpen})}

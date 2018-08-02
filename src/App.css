@@ -3816,7 +3816,9 @@ a.mdc-list-item {
   color: #FF5A5F; }
 
 html, body, #root, .awsappsync--rehydrated {
-  height: 100%; }
+  height: 100%;
+  padding: 0;
+  margin: 0; }
 
 .App {
   text-align: center; }
