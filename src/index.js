@@ -62,4 +62,4 @@ const WithProvider = () => (
 ) 
 
 ReactDOM.render(<WithProvider />, document.getElementById('root'));
-//registerServiceWorker();
+// registerServiceWorker();

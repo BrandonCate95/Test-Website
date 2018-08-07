@@ -5,38 +5,6 @@ import 'froala-editor/js/froala_editor.pkgd.min.js'
 import FroalaEditorImg from 'react-froala-wysiwyg/FroalaEditorImg'
 import $ from 'jquery'
 
-$.FroalaEditor.DefineIcon('imageReplace', {NAME: 'upload'});
-
-$.FroalaEditor.DefineIconTemplate('arrows-h', '<i class="fa fa-[NAME]"></i>');
-$.FroalaEditor.DefineIcon('fullWidthIcon', {NAME: 'arrows-h', template: 'arrows-h'});
-$.FroalaEditor.RegisterCommand('fullWidth', {
-  title: 'Max Width',
-  icon: 'fullWidthIcon',
-  focus: false,
-  undo: true,
-  refreshAfterCallback: false,
-  callback: function () {
-    $(`#fullWidth-${this.id}`).toggleClass( 'img-popup-active' )
-    let $img = this.image.get()
-    $img.toggleClass( 'img-width-100' )
-  },
-});
-
-$.FroalaEditor.DefineIconTemplate('arrows-v', '<i class="fa fa-[NAME]"></i>');
-$.FroalaEditor.DefineIcon('fullHeightIcon', {NAME: 'arrows-v', template: 'arrows-v'});
-$.FroalaEditor.RegisterCommand('fullHeight', {
-  title: 'Max Height',
-  icon: 'fullHeightIcon',
-  focus: false,
-  undo: true,
-  refreshAfterCallback: true,
-  callback: function () {
-    $(`#fullHeight-${this.id}`).toggleClass( 'img-popup-active' )
-    let $img = this.image.get()
-    $img.toggleClass( 'img-height-100' )
-  },
-});
-
 const StyledUnderlay = styled.div`
     position: absolute;
     width: 100%;

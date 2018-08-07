@@ -1,5 +1,5 @@
 function getURLParamsByName(name, url) {
-    if (!url) url = window.location.href;
+    if (!url) url = '';//window.location.href;
     name = name.replace(/[[\]]/g, "\\$&");
     var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
         results = regex.exec(url);

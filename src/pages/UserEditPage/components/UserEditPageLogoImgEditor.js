@@ -5,8 +5,6 @@ import FroalaEditorImg from 'react-froala-wysiwyg/FroalaEditorImg'
 import { Storage } from 'aws-amplify'
 import $ from 'jquery'
 import 'froala-editor/js/froala_editor.pkgd.min.js'
-import 'froala-editor/css/froala_editor.pkgd.min.css'
-import 'font-awesome/css/font-awesome.css'
 
 const StyledOverlay = styled.div`
     pointer-events: none;

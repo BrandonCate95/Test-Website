@@ -63,7 +63,6 @@ import Auth from './pages/AuthPage'
 // })
 
 const App = () => (  
-  <Router>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/About" component={About} />
@@ -73,8 +72,7 @@ const App = () => (
       <PrivateUserRoute path="/:user/edit" component={UserEdit} />
       <Route path="/:user/:page" component={Post} />
       <Route path="/:user" component={User} />     
-    </Switch>
-  </Router>    
+    </Switch>   
 )
 
 export default App
