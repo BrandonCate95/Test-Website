@@ -9,10 +9,15 @@
       "react",
       "jest"
   ],
+  "plugins": [
+    "transform-es2015-modules-commonjs", 
+    "transform-object-rest-spread",
+    "transform-class-properties"
+  ],
   "env": {
       "test": {
           "presets": ["react"],
-          "plugins": ["transform-es2015-modules-commonjs"]
+          "plugins": ["transform-es2015-modules-commonjs", "transform-class-properties", "transform-object-rest-spread"]
       }
 
   }

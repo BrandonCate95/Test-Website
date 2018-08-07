@@ -6,6 +6,8 @@ import styled from 'styled-components'
 import { HomeLogo } from '../../components/links/NavBarHomeLink'
 import Button from '../../components/mdc/Button'
 
+import {Storage} from 'aws-amplify'
+
 const StyledNav = styled.nav`
   position: absolute;
   width: 100%;
@@ -43,6 +45,10 @@ class Home extends React.Component {
         {catagoryName: "friend", symbolName: "fitness_center"}
       ];
       return catagoryList;
+    }
+
+    componentWillMount = () => {
+      Storage.get('LogoImg.png', {level: "protected", identityId: 'hi'}).then((data) => console.log(data))
     }
 
     render(){ 

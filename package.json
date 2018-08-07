@@ -19,19 +19,17 @@
     "@material/react-top-app-bar": "^0.3.0",
     "@material/tabs": "^0.36.0",
     "@material/top-app-bar": "^0.36.1",
-    "ajv": "^6.5.2",
     "aws-amplify": "^0.3.3",
     "aws-amplify-react": "^0.1.43",
     "aws-appsync": "^1.0.17",
     "aws-appsync-react": "^1.0.10",
     "aws-sdk": "^2.238.1",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "bootstrap": "^4.1.1",
     "concurrently": "^3.6.1",
     "express": "^4.16.3",
+    "file-loader": "^1.1.11",
     "font-awesome": "^4.7.0",
     "graphql-tag": "^2.9.2",
     "jest": "^23.4.2",
@@ -57,7 +55,8 @@
     "redux-thunk": "^2.2.0",
     "sass-loader": "^7.0.3",
     "styled-components": "^3.3.2",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "webpack": "^4.16.5"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules ./src/index.scss -o ./src",
@@ -70,5 +69,8 @@
     "eject": "react-scripts eject",
     "server": "npm install && node index.js",
     "prod": "npm i && npm-run-all build server"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1"
   }
 }

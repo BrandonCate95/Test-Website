@@ -2265,9 +2265,9 @@ a.mdc-list-item {
     [dir="rtl"] .mdc-drawer--persistent.mdc-drawer--open .mdc-drawer__drawer, .mdc-drawer--persistent.mdc-drawer--open[dir="rtl"] .mdc-drawer__drawer {
       transform: none; }
   .mdc-drawer--persistent.mdc-drawer--animating .mdc-drawer__drawer {
-    transition: transform 0ms 0ms cubic-bezier(0.4, 0, 0.2, 1); }
+    transition: transform 200ms 0ms cubic-bezier(0.4, 0, 0.2, 1); }
   .mdc-drawer--persistent.mdc-drawer--animating.mdc-drawer--open .mdc-drawer__drawer {
-    transition: transform 0ms 0ms cubic-bezier(0.4, 0, 0.2, 1); }
+    transition: transform 250ms 0ms cubic-bezier(0.4, 0, 0.2, 1); }
 
 .mdc-drawer--permanent {
   color: rgba(0, 0, 0, 0.87);
@@ -2484,9 +2484,9 @@ a.mdc-list-item {
   .mdc-drawer--temporary.mdc-drawer--animating::before {
     transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1); }
   .mdc-drawer--temporary.mdc-drawer--animating .mdc-drawer__drawer {
-    transition: transform 0ms 0ms cubic-bezier(0.4, 0, 0.2, 1); }
+    transition: transform 200ms 0ms cubic-bezier(0.4, 0, 0.2, 1); }
   .mdc-drawer--temporary.mdc-drawer--animating.mdc-drawer--open .mdc-drawer__drawer {
-    transition: transform 0ms 0ms cubic-bezier(0.4, 0, 0.2, 1); }
+    transition: transform 250ms 0ms cubic-bezier(0.4, 0, 0.2, 1); }
 
 .mdc-drawer-scroll-lock {
   overflow: hidden; }
