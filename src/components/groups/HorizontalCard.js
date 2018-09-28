@@ -84,9 +84,8 @@ class HorizontalCard extends React.Component {
 
     render(){
         const {link, identityId, imgKey, title, logoKey, author, desc} = this.props
-        console.log(identityId)
         return(
-            <ContainerShowHide show={this.state.show}>
+            <ContainerShowHide show={false}>
                 <Link to={link} style={{textDecoration: "none", color: "inherit"}}>
                     <StyledCard
                         style={{margin: "10px 0"}}

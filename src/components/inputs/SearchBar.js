@@ -34,7 +34,6 @@ class SearchBar extends React.Component {
     }
 
     render(){
-      console.log('testing!!!!!!')
       return(
         <form className={this.props.className} onSubmit={this.submitSearch}>
             <StyledTextField

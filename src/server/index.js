@@ -36,24 +36,19 @@ const client = new AWSAppSyncClient({
 
 const app = express();
 
-// console.log(path.resolve( __dirname, "../../build/static/js" ));
-app.use( express.static( path.resolve( __dirname, "../../build" ) ) );
 
-// console.log(app)
+app.use( express.static( path.resolve( __dirname, "../../build/static" ) ) );
 
 var jsFile = "";
-glob(path.resolve( __dirname, "../../build/static/js/main.*.js" ), (er, files) => { jsFile = files[0].split('build')[1]; console.log(jsFile) })
-// console.log(jsFile)
+glob(path.resolve( __dirname, "../../build/static/js/main.*.js" ), (er, files) => { jsFile = files[0].split('static')[1]; console.log(jsFile) })
 
 var cssFile = "";
-glob(path.resolve( __dirname, "../../build/static/css/main.*.css" ), (er, files) => { cssFile = files[0].split('build')[1]; console.log(cssFile) })
-// console.log(cssFile)
+glob(path.resolve( __dirname, "../../build/static/css/main.*.css" ), (er, files) => { cssFile = files[0].split('static')[1]; console.log(cssFile) })
+
 
 app.get( "/*", ( req, res ) => {
     const context = { };
     console.log('hi')
-
-    // console.log(req)
 
     const loggerMiddleware = createLogger()
     const store = createStore(
@@ -68,8 +63,7 @@ app.get( "/*", ( req, res ) => {
         )
     );
     store.dispatch({ type: 'INIT' });
-    // console.log(App)
-    // console.log(req.url)
+
     const jsx = (
         <ApolloProvider client={ client }>
             <ReduxProvider store={ store }>
@@ -79,15 +73,18 @@ app.get( "/*", ( req, res ) => {
             </ReduxProvider>
         </ApolloProvider>
     );
-    // console.log(jsx)
+
     const reactDom = renderToString( jsx );
 
     const reduxState = store.getState( );
 
-    // console.log(reactDom)
+
     res.writeHead( 200, { "Content-Type": "text/html" } );
-    res.end( htmlTemplate( cssFile, jsFile, reactDom, reduxState ) );
-    // console.log(reduxState)
+
+    const html = htmlTemplate( cssFile, jsFile, reactDom, reduxState )
+    console.log(html)
+
+    res.end( html );
 
     // var ua = req.headers['user-agent'],
     //     $ = {};

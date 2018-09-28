@@ -62,7 +62,6 @@ class NavPageTemplate extends React.Component {
         const {props} = this
         const navBarContainer = props.children.filter((child) => child.props["navpage-role"] === 'navbar')
         const pageContentContainer = props.children.filter((child) => child.props["navpage-role"] === 'page-content')
-        console.log(props)
         return(
             <React.Fragment>
 

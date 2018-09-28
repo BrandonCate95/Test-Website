@@ -6,14 +6,14 @@
 	"LastNPMInstallTime": "",
 	"FrontendLastBuildTime": "2018-07-31-14-58-23",
 	"LastPublishTime": "2018-07-31-14-58-48",
-	"BackendLastSyncTime": "2018-08-06-08-02-18",
-	"BackendLastBuildTime": "2018-08-06-08-02-14",
-	"BackendLastPushTime": "2018-08-06-08-02-14",
+	"BackendLastSyncTime": "2018-09-28-12-44-41",
+	"BackendLastBuildTime": "2018-09-28-12-44-35",
+	"BackendLastPushTime": "2018-09-28-12-44-37",
 	"BackendProjectID": "022c12be-b5b7-4024-abd0-21fdb994d920",
 	"BackendProjectName": "web-app-1.0",
 	"BackendProjectConsoleUrl": "https://console.aws.amazon.com/mobilehub/home#/022c12be-b5b7-4024-abd0-21fdb994d920/build",
 	"BackendProjectCreationTime": "2018-05-11T02:17:07.448Z",
-	"BackendProjectLastUpdatedTime": "2018-08-06T15:02:14.257Z",
+	"BackendProjectLastUpdatedTime": "2018-09-28T19:44:31.980Z",
 	"Framework": "react",
-	"BackendLastSyncToDevTime": "2018-08-06-08-02-18"
+	"BackendLastSyncToDevTime": "2018-09-28-12-44-41"
 }
