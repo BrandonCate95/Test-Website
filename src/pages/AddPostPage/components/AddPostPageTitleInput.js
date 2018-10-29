@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const StyledInputTitle = styled.input`
     width: 100%;
-    z-index: 3;
+    z-index: 2;
     font-size: 48px;
     font-family: Futura, Trebuchet MS, Arial, sans-serif;
     outline: none;
@@ -45,7 +45,7 @@ const InUseMessage = styled(ErrorMessage)`
     opacity: 0.3;
 `
 
-const MainTitleInput = ({title, handleTitleChange, preview, titleCheck, titleCheckUserMatch, toggleToolbar}) => (
+const MainTitleInput = ({title, handleTitleChange, preview, titleCheck, titleCheckUserMatch, handleTitleFocus, handleTitleBlur}) => (
     <React.Fragment>
         <StyledInputTitle 
             id="main-title"
@@ -56,8 +56,8 @@ const MainTitleInput = ({title, handleTitleChange, preview, titleCheck, titleChe
             placeholder="Title here..."
             value={title}
             onChange={handleTitleChange}
-            onFocus={toggleToolbar}
-            onBlur={toggleToolbar}
+            onFocus={handleTitleFocus}
+            onBlur={handleTitleBlur}
             disabled={preview}
         />
         {titleCheck && !titleCheckUserMatch &&
@@ -82,8 +82,7 @@ MainTitleInput.propTypes = {
     handleTitleChange: PropTypes.func.isRequired, 
     preview: PropTypes.bool.isRequired, 
     titleCheck: PropTypes.bool.isRequired, 
-    titleCheckUserMatch: PropTypes.bool.isRequired, 
-    toggleToolbar: PropTypes.func.isRequired,
+    titleCheckUserMatch: PropTypes.bool.isRequired
 }
 
 export default MainTitleInput

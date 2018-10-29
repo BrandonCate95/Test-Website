@@ -17,13 +17,12 @@ const SearchContent = (props) => (
       query={SEARCH_CONTENT}
       variables={{ text: props.search }}
       skip={!props.search}
+      ssr={true}
       notifyOnNetworkStatusChange
-      fetchPolicy='network-only'
     >
       {({ loading, error, data, refetch, networkStatus }) => {
         if (error) return `Error!: ${error}`;
         if (loading) return <StyledLoading><Spinner large primary/></StyledLoading>
-        console.log(data)
         return (
           <React.Fragment>
             {React.cloneElement(props.children, {loading, error, data, refetch, networkStatus, sideBarOpen: props.sideBarOpen})}

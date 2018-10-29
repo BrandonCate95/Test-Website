@@ -6,9 +6,7 @@ const UpdateImg = (props) => (
     <Mutation mutation={UPDATE_IMG}>
         {(updateImg, { loading, error, data }) => (
             React.cloneElement(props.children, {loading, error, data, updateImgMutation: async (imgId, visibility, file) => {
-                console.log(imgId, visibility, file)
                 const res = await updateImg({ variables: { imgId, visibility, file } })
-                console.log(res)
                 return res
             },
             ...props

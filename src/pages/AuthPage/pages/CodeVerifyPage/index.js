@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Auth } from 'aws-amplify'
+import {Auth} from 'aws-amplify'
 import CodeVerifyBtn from './components/CodeVerifyBtn'
 import { connect } from 'react-redux'
 import { userEmailVerified } from '../../../../actions/actions'
-import TextField, {Input} from '@material/react-text-field'
 import AuthPageTemplate from '../../template/AuthPageTemplate'
 import Button from '../../../../components/mdc/Button'
+
+import TextField from '../../../../components/mdc/TextField'
+import Input from '../../../../components/mdc/Input'
 
 const StyledDiv = styled.div`
   display: flex;

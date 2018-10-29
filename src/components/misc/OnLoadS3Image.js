@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { S3Image } from 'aws-amplify-react'
+import S3Image from '../aws-amplify-react/S3Image'
 
 const ContainerShowHide = styled.div`
     opacity: ${props => props.show ? '0' : '1'}

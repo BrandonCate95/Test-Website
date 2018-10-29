@@ -9,13 +9,14 @@ const GetUserByUsername = (props) => (
       skip={!props.username}
       notifyOnNetworkStatusChange
       fetchPolicy='network-only'
+      ssr={true}
     >
       {({ loading, error, data, refetch, networkStatus }) => {
         if (error) return `Error!: ${error}`;
         if (loading) return null;
         return (
           <React.Fragment>
-            {React.cloneElement(props.children, {loading, error, data: data.getUserByUsername ? data.getUserByUsername.users[0] : data, refetch, networkStatus})}
+            {React.cloneElement(props.children, {loading, error, data: typeof data === 'undefined' ? data : data.getUserByUsername.users[0], refetch, networkStatus})}
           </React.Fragment>
         );
       }}

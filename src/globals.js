@@ -1,0 +1,1 @@
+export const default_user_logo_key = 'nothing' 

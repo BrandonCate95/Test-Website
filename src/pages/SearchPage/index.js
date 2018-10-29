@@ -3,8 +3,17 @@ import PropTypes from 'prop-types'
 import SearchPageResults from './components/SearchPageResults'
 import SearchPageSideBarContent from './components/SearchPageSideBarContent'
 import NavPageTemplate, { NavBarContainer, SideBarContainer, PageContentContainer } from '../../components/groups/NavPageTemplate'
-import NavBar from '../../components/groups/NavBarSearch&Post'
+// import NavBar from '../../components/groups/NavBarSearch&Post'
 import SearchContent from '../../queries/components/SearchContent'
+import Loadable from 'react-loadable'
+import Spinner from '../../components/misc/Spinner'
+
+const Loading = () => <Spinner primary />
+
+const NavBar = Loadable({
+  loader: () => import('../../components/groups/NavBarSearch&Post'),
+  loading: Loading,
+})
 
 const SearchPage = ({location}) => (
     <NavPageTemplate 

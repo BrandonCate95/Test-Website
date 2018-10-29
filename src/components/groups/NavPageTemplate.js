@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import {MDCPersistentDrawer} from '@material/drawer'
+// import {MDCPersistentDrawer} from '@material/drawer'
 
 const StyledDiv = styled.div`
     display: flex;
@@ -17,21 +17,18 @@ const ContentContainer = styled.div`
 
 export const NavBarContainer = (props) => (
     <React.Fragment>
-        {console.log(props)}
         {React.cloneElement(props.children, { ...props })}
     </React.Fragment>
 )
 
 export const SideBarContainer = (props) => (
     <React.Fragment>
-        {console.log(props)}
         {React.cloneElement(props.children, { ...props })}
     </React.Fragment>
 )
 
 export const PageContentContainer = (props) => (
     <React.Fragment>
-        {console.log(props)}
         {React.cloneElement(props.children, { ...props })}
     </React.Fragment>
 )
@@ -50,7 +47,8 @@ class NavPageTemplate extends React.Component {
         this.setState({sideBarOpen: this.drawer.open})
     }   
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
+        const {MDCPersistentDrawer} = await import(/* webpackChunkName: "material-common" */ '@material/drawer')
         this.drawer = new MDCPersistentDrawer(this.drawerRef.current);
     }
 

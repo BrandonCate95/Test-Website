@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Auth} from 'aws-amplify'
 import { Route, Redirect } from 'react-router-dom'
-import { Auth } from 'aws-amplify'
 
 class PrivateUserRoute extends React.Component {
 

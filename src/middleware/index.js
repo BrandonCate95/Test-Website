@@ -1,6 +1,6 @@
 export const localStorageLoad = store => next => action => {
     switch (action.type){
-        case 'INIT':
+        case 'CLIENT_INIT':
             let result = next(action)
             try {
                 const storedState = JSON.parse(
@@ -10,6 +10,13 @@ export const localStorageLoad = store => next => action => {
                     store.dispatch({
                         type: 'RESTORE_STATE',
                         payload: storedState
+                    })
+                    fetch("/api/set_user", {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            user: storedState.user                      
+                        }),
+                        headers: {"Content-Type": "application/json"}
                     })
                 }
                 return;

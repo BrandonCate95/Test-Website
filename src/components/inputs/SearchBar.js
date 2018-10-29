@@ -2,9 +2,11 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import getURLParamsByName from '../../utilities/getURLParamsByName'
-import TextField, {Input} from '@material/react-text-field'
 import Button from '../mdc/Button'
 import styled from 'styled-components'
+
+import TextField from '../mdc/TextField'
+import Input from '../mdc/Input'
 
 const StyledTextField = styled(TextField)`
     height: auto !important;
@@ -20,17 +22,17 @@ class SearchBar extends React.Component {
     };
 
     submitSearch = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         //dont use redirect as it pops off previous history state
-        this.props.history.push(`/Search?q=${this.state.search}`);
+        this.props.history.push(`/Search?q=${this.state.search}`)
     }
 
     handleChange = (e) => {
-        this.setState({ search: e.target.value });
+        this.setState({ search: e.target.value })
     }
 
     componentWillReceiveProps(e){
-        this.setState({ search: getURLParamsByName('q') || "" });
+        this.setState({ search: getURLParamsByName('q') || "" })
     }
 
     render(){

@@ -22,7 +22,7 @@ const StyledNotice = styled.p`
     margin-left: auto;
 `
 
-const NotesSection = ({preview, notes, handleInputChange, toggleToolbar}) => (
+const NotesSection = ({preview, notes, handleInputChange}) => (
     <React.Fragment>
     {!preview &&
         <React.Fragment>
@@ -40,8 +40,6 @@ const NotesSection = ({preview, notes, handleInputChange, toggleToolbar}) => (
                 value={notes}
                 handleTextAreaChange={handleInputChange}
                 placeholder="..."
-                onFocus={toggleToolbar}
-                onBlur={toggleToolbar}
             />
         </React.Fragment>
     }
@@ -51,8 +49,7 @@ const NotesSection = ({preview, notes, handleInputChange, toggleToolbar}) => (
 NotesSection.propTypes = {
     preview: PropTypes.bool.isRequired,
     notes: PropTypes.string.isRequired,
-    handleInputChange: PropTypes.func.isRequired,
-    toggleToolbar: PropTypes.func.isRequired,
+    handleInputChange: PropTypes.func.isRequired
 }
 
 export default NotesSection

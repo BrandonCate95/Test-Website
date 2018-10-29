@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import 'froala-editor/js/froala_editor.pkgd.min.js'
 import FroalaEditorImg from 'react-froala-wysiwyg/FroalaEditorImg'
-import $ from 'jquery'
 
 const StyledUnderlay = styled.div`
     position: absolute;
@@ -41,7 +40,8 @@ class EditorImg extends React.Component {
     }
   } 
 
-  handlePopupBtnToggle = (e) => {
+  handlePopupBtnToggle = async (e) => {
+    const { default: $ } = await import(/* webpackChunkName: "jquery" */ 'jquery')
     if($(e.target).hasClass('img-width-100') !== $('#fullWidth-1').hasClass('img-popup-active')){
       $('#fullWidth-1').toggleClass('img-popup-active')
     }            
@@ -50,16 +50,16 @@ class EditorImg extends React.Component {
     } 
   }
 
-  componentDidMount = () => {
-    $('#froalaImgEditor1').on('click', this.props.toggleToolbar)
+  componentDidMount = async () => {
+    const { default: $ } = await import(/* webpackChunkName: "jquery" */ 'jquery')
     $('#froalaImgEditor1').on('click', this.handlePopupBtnToggle)
     $('#froalaImgEditor1').on('error', this.props.handleImgError)
     $('#froalaImgEditor1').froalaEditor().on('froalaEditor.image.beforeUpload', this.props.handleImgUpload)
     $('#froalaImgEditor1').froalaEditor().on('froalaEditor.image.beforeRemove', this.props.handleDeleteImg)
   }
 
-  componentWillUnmount = () => {
-    $('#froalaImgEditor1').off('click', this.props.toggleToolbar)
+  componentWillUnmount = async () => {
+    const { default: $ } = await import(/* webpackChunkName: "jquery" */ 'jquery')
     $('#froalaImgEditor1').off('click', this.handlePopupBtnToggle)
     $('#froalaImgEditor1').off('error', this.props.handleImgError)
     $('#froalaImgEditor1').froalaEditor().off('froalaEditor.image.beforeUpload', this.props.handleImgUpload)
@@ -87,7 +87,7 @@ class EditorImg extends React.Component {
           model={{
             id: model.id,
             src: model.src,
-            class: `${model.class} ${model.src === '#' ? ' no-image-uploaded' : ''}`,
+            class: `pos-absolute ${model.class} ${model.src === '#' ? ' no-image-uploaded' : ''}`,
           }}
           onModelChange={handleModelChange}
         />      
@@ -103,7 +103,6 @@ EditorImg.propTypes = {
   }),
   handleModelChange: PropTypes.func.isRequired,
   preview: PropTypes.bool.isRequired,
-  toggleToolbar: PropTypes.func.isRequired,
   handleImgUpload: PropTypes.func.isRequired,
   handleImgError: PropTypes.func.isRequired,
   handleDeleteImg: PropTypes.func.isRequired,

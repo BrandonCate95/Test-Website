@@ -2,7 +2,7 @@ const userInitialState =  {
     identityId: '',
     username: '',
     isLoading: false,
-    isLoggedIn: false,
+    authenticated: false,
     emailVerified: false,
     error: '',
 }
@@ -10,7 +10,7 @@ const userInitialState =  {
 const user = ( state = userInitialState , action ) => {
     switch (action.type) {
         case 'RESTORE_STATE':
-            return action.payload.user
+            return Object.assign({}, state, action.payload.user)
         case 'USER_LOGIN_START':
             return Object.assign({}, state, {
                 isLoading: true,
@@ -20,7 +20,7 @@ const user = ( state = userInitialState , action ) => {
                 identityId: action.payload.identityId,
                 username: action.payload.username,
                 emailVerified: action.payload.emailVerified,
-                isLoggedIn: true,
+                authenticated: true,
                 isLoading: false,
                 error: '',
             })
@@ -28,25 +28,25 @@ const user = ( state = userInitialState , action ) => {
             return Object.assign({}, state, {
                 identityId: '',
                 username: '',
-                isLoggedIn: false,
+                authenticated: false,
                 isLoading: false,
                 error: action.error,
             })
         case 'USER_LOGOUT_START':
             return Object.assign({}, state, {
                 isLoading: true,
-                isLoggedIn: false, //this is optimistic response
+                authenticated: false, //this is optimistic response
                 username: '',
                 identityId: '',
             })            
         case 'USER_LOGOUT_SUCCESS':
             return Object.assign({}, state, {
-                isLoggedIn: false,
+                authenticated: false,
                 isLoading: false
             })
         case 'USER_LOGOUT_FAILURE':
             return Object.assign({}, state, {
-                isLoggedIn: false,
+                authenticated: false,
                 isLoading: false,
                 error: action.error,
             })

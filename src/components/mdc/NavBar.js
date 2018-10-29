@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {MDCTopAppBar} from '@material/top-app-bar/index'
+// import {MDCTopAppBar} from '@material/top-app-bar/index'
 
 export const StartSection = ({className, children}) => (
     <div className={`mdc-top-app-bar__section mdc-top-app-bar__section--align-start ${className}`}>
@@ -25,7 +25,8 @@ class NavBar extends React.Component {
     topAppBar = null
     topAppBarRef = React.createRef()
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
+        const {MDCTopAppBar} = await import(/* webpackChunkName: "material-common" */ '@material/top-app-bar')
         this.topAppBar = new MDCTopAppBar(this.topAppBarRef.current)
     }
     

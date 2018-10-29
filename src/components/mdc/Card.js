@@ -1,12 +1,13 @@
 import React from 'react'
-import {MDCRipple} from '@material/ripple'
+// import {MDCRipple} from '@material/ripple'
 
 class Card extends React.Component {
 
     card = null
     cardRef = React.createRef()
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
+        const {MDCRipple} = await import(/* webpackChunkName: "material-common" */ '@material/ripple')
         this.card = new MDCRipple(this.cardRef.current)
     }
 

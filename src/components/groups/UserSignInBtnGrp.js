@@ -8,13 +8,13 @@ import UserProfileMenu from '../menus/UserProfileMenu'
 
 const UserSignInBtnGrp = (props) => (
     <React.Fragment>
-        {!props.isLoggedIn &&
+        {!props.authenticated &&
             <React.Fragment>
                 <SignInLinkWithRouter/>
                 <SignUpLinkWithRouter/>
             </React.Fragment>
         }
-        {props.isLoggedIn &&
+        {props.authenticated &&
             <React.Fragment>
                 { !props.emailVerified &&
                     <CodeVerifyLink />
@@ -28,14 +28,14 @@ const UserSignInBtnGrp = (props) => (
 )
     
 UserSignInBtnGrp.propTypes = {
-    isLoggedIn: PropTypes.bool.isRequired,
+    authenticated: PropTypes.bool.isRequired,
     username: PropTypes.string.isRequired,
     emailVerified: PropTypes.bool.isRequired,
 }
 
 const mapStateToProps = (state) => {
     return {
-        isLoggedIn: state.user.isLoggedIn,
+        authenticated: state.user.authenticated,
         username: state.user.username,
         emailVerified: state.user.emailVerified,
     }

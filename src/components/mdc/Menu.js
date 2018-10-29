@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import {MDCMenu, Corner} from '@material/menu'
+// import {MDCMenu, Corner} from '@material/menu'
 
 const StyledMenuDiv = styled.div`
     left: ${props => props.left} !important; 
@@ -30,7 +30,8 @@ class MenuContainer extends React.Component {
     menuEl = React.createRef()
     menuButtonEl = React.createRef()
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
+      const {MDCMenu, Corner} = await import(/* webpackChunkName: "material-common" */ '@material/menu')
       // Instantiation
       this.menu = new MDCMenu(this.menuEl.current)
       // Toggle menu open

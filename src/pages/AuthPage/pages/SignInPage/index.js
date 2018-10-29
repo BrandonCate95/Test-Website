@@ -4,10 +4,12 @@ import SignUpLinkWithRouter from '../../../../components/links/SignUpLinkWithRou
 import Login from './components/LoginBtn'
 import { connect } from 'react-redux'
 import { userLogin } from '../../../../actions/actions'
-import TextField, {Input} from '@material/react-text-field'
 import styled from 'styled-components'
 import ForgotPasswordLink from './components/ForgotPasswordLink'
 import AuthPageTemplate from '../../template/AuthPageTemplate'
+
+import TextField from '../../../../components/mdc/TextField'
+import Input from '../../../../components/mdc/Input'
 
 const StyledDiv = styled.div`
   display: flex;
@@ -74,7 +76,7 @@ class SignInPage extends React.Component {
             <Login
                 raised
                 to={ {state: this.props.location.state} }
-                redirectToReferrer={ this.props.isLoggedIn }
+                redirectToReferrer={ this.props.authenticated }
                 loading={this.state.loading}
             />
 
@@ -98,13 +100,13 @@ SignInPage.defaultProps = {
 }
 
 SignInPage.propTypes = {
-  isLoggedIn: PropTypes.string.isRequired,
+  authenticated: PropTypes.bool.isRequired,
   userLogin: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state) => {
   return {
-      isLoggedIn: state.user.isLoggedIn,
+      authenticated: state.user.authenticated,
   }
 }
 

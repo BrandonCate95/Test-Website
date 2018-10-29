@@ -209,8 +209,16 @@ $mdc-typography-styles-subtitle2: (
   pointer-events: none;
 }
 
+.pos-absolute{
+  position: absolute !important;
+}
+
 .img-width-100, .no-image-uploaded{
   width: 100% !important;
+}
+
+.no-image-uploaded{
+  border: 1px solid rgba(202, 202, 202, 0.99);
 }
 
 .img-height-100{

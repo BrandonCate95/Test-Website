@@ -2,8 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import AuthorTag from '../../../components/groups/AuthorTag'
-import { S3Image } from 'aws-amplify-react'
-import JsxParser from 'react-jsx-parser'
+import S3Image from '../../../components/aws-amplify-react/S3Image'
+
+import Loadable from 'react-loadable'
+import Spinner from '../../../components/misc/Spinner'
+
+const Loading = () => <div style={{position: "absolute", width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}><Spinner primary /></div>
+
+const JsxParser = typeof window !== 'undefined' ? Loadable({
+    loader: () => import('react-jsx-parser'),
+    loading: Loading,
+}) : () => <div></div>
 
 const MainCol = styled.div`
     display: flex;
@@ -66,6 +75,7 @@ const PostPageContent = ({title, identityId, userData, imgKey, imgClass, content
         </StyledMainImgContainer>
         <StyledDiv className="custom-theme fr-box fr-basic">
             <div className="fr-element fr-view">
+                {/* <div dangerouslySetInnerHTML={{__html: content}} /> */}
                 <JsxParser
                     className="fr-element"
                     components={{ S3Image }}

@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Auth } from 'aws-amplify'
+import {Auth} from 'aws-amplify'
 import SignInLinkWithRouter from '../../../../../../components/links/SignInLinkWithRouter'
-import TextField, {Input} from '@material/react-text-field'
 import CodeSendBtn from './components/CodeSendBtn'
 import AuthPageTemplate from '../../../../template/AuthPageTemplate'
+
+import TextField from '../../../../../../components/mdc/TextField'
+import Input from '../../../../../../components/mdc/Input'
 
 const StyledDiv = styled.div`
   display: flex;

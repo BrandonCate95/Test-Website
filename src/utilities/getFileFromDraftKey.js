@@ -1,6 +1,6 @@
-import { Storage } from 'aws-amplify'
+import {Storage} from 'aws-amplify'
 
-async function getFileFromDraftKey(key){
+const getFileFromDraftKey = async (key) => {
     var selectedFile = await Storage.get(`imgs/${key}`, { level: 'protected' })
         .then(result => fetch(result))
         .then(async (res) => { 

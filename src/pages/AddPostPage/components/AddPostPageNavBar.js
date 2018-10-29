@@ -9,7 +9,6 @@ import PostCRUDPopups from '../../../components/groups/PostCRUDPopups'
 import NavBar, {StartSection, MiddleSection, EndSection} from '../../../components/mdc/NavBar'
 import NavBarHomeLink from '../../../components/links/NavBarHomeLink'
 import TitleScrollShow from '../../../components/misc/TitleScrollShow'
-import Button from '../../../components/mdc/Button'
 
 const StyledTitleContainer = styled.div`
     display: flex;
@@ -48,15 +47,7 @@ const AddPostPageNavBar = (props) => (
                 <NavBarHomeLink 
                     className="mdc-typography--headline6"
                 />
-            </StyledTitleContainer>
-
-            <Button
-                title="preview page"
-                icon
-                onClick={props.togglePreview}
-            >
-                pageview
-            </Button>            
+            </StyledTitleContainer>     
 
             <AddPostPageSaveDraftBtn 
                 draftData={props.uploadData}
@@ -98,7 +89,6 @@ AddPostPageNavBar.propTypes = {
     uploadData: PropTypes.object.isRequired,
     setPostId: PropTypes.func.isRequired,
     handleNewPage: PropTypes.func.isRequired,
-    togglePreview: PropTypes.func.isRequired,
 }
 
 const AddPostPageNavBarWithQuery = (props) => (

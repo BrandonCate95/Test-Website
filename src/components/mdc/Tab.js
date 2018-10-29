@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {MDCTabBar} from '@material/tabs'
+// import {MDCTabBar} from '@material/tabs'
 
 const DefaultPanel = styled.div`
     display: none !important;
@@ -76,7 +76,8 @@ class TabContainer extends React.Component {
     dotsRef = React.createRef()
     panelsRef = React.createRef()
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
+        const {MDCTabBar} = await import(/* webpackChunkName: "MDCTabBar" */ '@material/tabs')
         this.dynamicTabBar = window.dynamicTabBar = new MDCTabBar(this.dynamicTabBarRef.current)
   
         this.dynamicTabBar.tabs.forEach(function(tab) {

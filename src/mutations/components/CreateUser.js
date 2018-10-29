@@ -1,6 +1,6 @@
 import React from 'react'
 import { Mutation } from 'react-apollo'
-import { Auth } from 'aws-amplify'
+import {Auth} from 'aws-amplify'
 import CREATE_USER from '../mutation/CREATE_USER'
 
 const CreateUser = (props) => (

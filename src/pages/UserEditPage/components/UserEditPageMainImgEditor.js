@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import FroalaEditorImg from 'react-froala-wysiwyg/FroalaEditorImg'
-import { Storage } from 'aws-amplify'
-import $ from 'jquery'
+import {Storage} from 'aws-amplify'
 import 'froala-editor/js/froala_editor.pkgd.min.js'
 
 const StyledOverlay = styled.div`
@@ -60,11 +59,13 @@ class UserPageMainImgEditor extends React.Component {
     return false  
   }
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
+    const { default: $ } = await import(/* webpackChunkName: "jquery" */ 'jquery')
     $('#froalaMainImgEditor').froalaEditor().on('froalaEditor.image.beforeUpload', this.handleUpdateImg) 
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount = async () => {
+    const { default: $ } = await import(/* webpackChunkName: "jquery" */ 'jquery')
     $('#froalaMainImgEditor').froalaEditor().off('froalaEditor.image.beforeUpload', this.handleUpdateImg)
   }
 
@@ -80,7 +81,6 @@ class UserPageMainImgEditor extends React.Component {
           config={config}
           model={model}
           onModelChange={handleModelChange}
-          onLoad={e => console.log(e)}
         />
       </StyledImgEditorContainer>
     )

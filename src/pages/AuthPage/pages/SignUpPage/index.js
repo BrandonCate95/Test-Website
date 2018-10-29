@@ -4,12 +4,14 @@ import SignInLinkWithRouter from '../../../../components/links/SignInLinkWithRou
 import SignUpBtn from './components/SignUpBtn'
 import { connect } from 'react-redux'
 import { userLoginSuccess } from '../../../../actions/actions'
-import { Auth } from 'aws-amplify'
+import {Auth} from 'aws-amplify'
 import { graphql } from 'react-apollo'
 import CREATE_USER from '../../../../mutations/mutation/CREATE_USER'
-import TextField, {Input} from '@material/react-text-field'
 import styled from 'styled-components'
 import AuthPageTemplate from '../../template/AuthPageTemplate'
+
+import TextField from '../../../../components/mdc/TextField'
+import Input from '../../../../components/mdc/Input'
 
 const StyledDiv = styled.div`
   display: flex;
@@ -141,7 +143,7 @@ SignUpPage.defaultProps = {
 }
 
 SignUpPage.propTypes = {
-  isLoggedIn: PropTypes.string.isRequired,
+  authenticated: PropTypes.bool.isRequired,
   username: PropTypes.string.isRequired,
   userLoginSuccess: PropTypes.func.isRequired,
   mutate: PropTypes.func.isRequired,
@@ -149,7 +151,7 @@ SignUpPage.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-      isLoggedIn: state.user.isLoggedIn,
+      authenticated: state.user.authenticated,
       username: state.user.username,
   }
 }

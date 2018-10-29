@@ -2,7 +2,7 @@ const addPageInitialState =  {
     postId: '',
     title: '',
     showTitle: false,
-    username: 'Nameless',
+    username: 'anon',
     content: '',
     imgId: 'froalaImgEditor1',
     imgKey: '#',
@@ -13,14 +13,20 @@ const addPageInitialState =  {
     saveLoading: false,
     titleCheck: false,
     titleCheckUserMatch: false,
+
+    s3Hash: {},
 }
 
 const addpage = ( state = addPageInitialState , action ) => {
     switch (action.type) {
         case 'RESTORE_STATE':
-            return action.payload.addpage || state
+            return Object.assign({}, state, action.payload.addpage)
         case 'UPDATE_ADD_PAGE_CACHE':
             return Object.assign({}, state, action.payload)
+        case 'SET_S3_HASH':
+            return Object.assign({}, state, {
+                s3Hash: action.s3Hash
+            })
         default:
             return state
     }

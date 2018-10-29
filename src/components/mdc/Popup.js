@@ -1,5 +1,5 @@
 import React from 'react'
-import {MDCDialog} from '@material/dialog'
+// import {MDCDialog} from '@material/dialog'
 import Button from './Button'
 
 export const Popup = (props) => (
@@ -55,7 +55,8 @@ class PopupContainer extends React.Component {
     dialogActivation = null
     dialogActivationRef = React.createRef()
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
+        const {MDCDialog} = await import(/* webpackChunkName: "MDCDialog" */ '@material/dialog')
         this.dialog = new MDCDialog(this.dialogRef.current)
 
         const popup = this.props.children.filter((child) => child.props["popup-role"] === 'popup')[0]

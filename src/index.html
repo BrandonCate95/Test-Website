@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React and Webpack4</title>
+  <link rel="shortcut icon" href="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg"> 
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- shortcut icon is for title, get one when necessary -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/dist/styles.css">
+  <link rel="prefetch" href="https://cognito-identity.us-east-2.amazonaws.com/">
+  <!-- {{loadableStyles}} -->
+  {{styleTags}}
+</head>
+<body>
+  <div id="root">{{content}}</div>
+  <script>
+    window.__APOLLO_STATE__ = '{{apolloState}}';
+    window.__REDUX_STATE__ = '{{reduxState}}';
+
+    // if ('serviceWorker' in navigator) {
+    //     window.addEventListener('load', function() {
+    //         navigator.serviceWorker.register('/service-worker.js');
+    //     });
+    // }
+</script>
+  {{loadableScripts}}
+</body>
+</html>

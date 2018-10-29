@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {MDCRipple} from '@material/ripple'
+// import {MDCRipple} from '@material/ripple'
 import { Link } from 'react-router-dom'
 import Spinner from '../misc/Spinner'
 
@@ -9,8 +9,9 @@ class Button extends React.Component {
     buttonRipple = null
     btnRef = !this.props.icon ? React.createRef() : undefined
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
         if(!this.props.icon){
+            const {MDCRipple} = await import(/* webpackChunkName: "material-common" */ '@material/ripple')
             this.buttonRipple = new MDCRipple(this.btnRef.current);
         }
     }

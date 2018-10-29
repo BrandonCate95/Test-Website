@@ -1,4 +1,4 @@
-import { Auth } from 'aws-amplify'
+import {Auth} from 'aws-amplify'
 import awsmobile from '../aws-exports'
 
 async function formatFileToPostImg(selectedFile, postId, id){

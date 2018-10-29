@@ -1,6 +1,6 @@
 import React from 'react'
 import { Mutation } from 'react-apollo'
-import { Storage } from 'aws-amplify'
+import Storage from '@aws-amplify/storage/lib'
 import DELETE_IMG from '../mutation/DELETE_IMG'
 
 const DeleteImg = (props) => (

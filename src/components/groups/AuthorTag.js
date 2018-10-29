@@ -1,16 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { S3Image } from 'aws-amplify-react'
+import S3Image from '../aws-amplify-react/S3Image'
 import SubscribeBtn from '../Buttons/SubscribeBtn'
 import getKeyWithoutPrefix from '../../utilities/getKeyWithoutPrefix'
+import { default_user_logo_key } from '../../globals'
 
 const StyledDiv = styled.div`
     display: flex;
     width: 100%;
     height: 80px;
     margin-bottom: 30px;
-    z-index: 3;
+    z-index: 2;
 `
 
 const StyledColumnContainer = styled.div`
@@ -34,16 +35,16 @@ const UserLogo = styled(S3Image)`
     border-radius: 50%;
 `
 
-const AuthorTag = (props) => (
+const AuthorTag = ({data}) => (
     <StyledDiv>
         <UserLogo 
-            identityId={props.identityId} 
+            identityId={data.identityId} 
             level="protected" 
-            imgKey={getKeyWithoutPrefix(props.data.logoImg.file.key)} 
+            imgKey={getKeyWithoutPrefix(typeof data === 'undefined' ? default_user_logo_key : data.logoImg.file.key)} 
         />
         <StyledColumnContainer>
             <StyledHeader>
-                {props.author}
+                {data.username}
             </StyledHeader>
             <SubscribeBtn />       
         </StyledColumnContainer>
@@ -51,13 +52,21 @@ const AuthorTag = (props) => (
 )
 
 AuthorTag.defaultProps = {
-    identityId: undefined,
+    data: {
+        identityId: '',
+        username: 'anon',
+        logoImg: {
+            file: {
+                key: ''
+            }
+        }
+    }
 }
 
 AuthorTag.propTypes = {
-    author: PropTypes.string.isRequired,
-    identityId: PropTypes.string,
     data: PropTypes.shape({
+        identityId: PropTypes.string.isRequired,
+        username: PropTypes.string.isRequired,
         logoImg: PropTypes.shape({
             file: PropTypes.shape({
                 key: PropTypes.string.isRequired,

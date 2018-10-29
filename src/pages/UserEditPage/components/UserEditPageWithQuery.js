@@ -1,13 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import UserPageEditContent from './UserEditPageContent'
 import UserPageEditSideBarContent from './UserEditPageSideBarContent'
 import NavPageTemplate, { NavBarContainer, SideBarContainer, PageContentContainer } from '../../../components/groups/NavPageTemplate'
 import NavBar from '../../../components/groups/NavBarSearch&Post'
 import getKeyWithoutPrefix from '../../../utilities/getKeyWithoutPrefix'
-import { Auth, Storage } from 'aws-amplify'
+import {Auth, Storage} from 'aws-amplify'
 import awsmobile from '../../../aws-exports'
+
+import Loadable from 'react-loadable'
+import Spinner from '../../../components/misc/Spinner'
+
+const Loading = () => <div style={{position: "absolute", width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}><Spinner large primary /></div>
+
+const UserPageEditContent = typeof window !== 'undefined' ? Loadable({
+    loader: () => import('./UserEditPageContent'),
+    loading: Loading,
+}) : <div></div>
 
 class UserPageEdit extends React.Component {
 
@@ -15,7 +24,7 @@ class UserPageEdit extends React.Component {
         mainImgModel: {
             id: 'froalaMainImgEditor',
             src: '#',
-            class: 'fr-view fr-fil fr-dib',
+            class: 'fr-view fr-fil fr-dib pos-absolute',
         },
         logoImgModel: {
             id: 'froalaLogoImgEditor',

@@ -1,7 +1,20 @@
 {
   "name": "web-app",
+  "sideEffects": false,
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "autoprefixer": "^9.1.1",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-graphql-tag": "^1.6.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "node-sass": "^4.9.3",
+    "npm-run-all": "^4.1.3",
+    "react-hot-loader": "^4.3.11",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-hot-middleware": "^2.22.3"
+  },
   "dependencies": {
     "@material-ui/core": "^1.4.2",
     "@material-ui/icons": "^2.0.0",
@@ -19,35 +32,68 @@
     "@material/react-top-app-bar": "^0.3.0",
     "@material/tabs": "^0.36.0",
     "@material/top-app-bar": "^0.36.1",
-    "aws-amplify": "^0.3.3",
-    "aws-amplify-react": "^0.1.43",
-    "aws-appsync": "^1.0.17",
-    "aws-appsync-react": "^1.0.10",
-    "aws-sdk": "^2.238.1",
-    "babel-polyfill": "^6.26.0",
+    "@redux-offline/redux-offline": "^2.4.0",
+    "aws-amplify": "^1.1.7",
+    "aws-amplify-react": "^2.1.1",
+    "aws-appsync": "^1.4.0",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-closure-elimination": "^1.3.0",
+    "babel-plugin-dynamic-import-node": "^2.0.0",
+    "babel-plugin-groundskeeper-willie": "^1.3.2",
+    "babel-plugin-hoist-facc": "^0.2.3",
+    "babel-plugin-import": "^1.8.0",
+    "babel-plugin-optimize-i18n": "^0.0.1",
+    "babel-plugin-react-css-modules": "^3.4.2",
+    "babel-plugin-styled-components": "^1.8.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-named-imports": "^2.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-class-to-function": "^1.1.2",
+    "babel-plugin-transform-react-constant-elements": "^6.23.0",
+    "babel-plugin-transform-react-inline-elements": "^6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.19",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-uglify": "^1.0.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "better-npm-run": "^0.1.1",
     "bootstrap": "^4.1.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "client-sessions": "^0.8.0",
+    "compression-webpack-plugin": "^2.0.0",
     "concurrently": "^3.6.1",
     "cross-fetch": "^2.2.2",
+    "css-loader": "^1.0.0",
     "express": "^4.16.3",
+    "fast-async": "^6.3.8",
+    "faster.js": "^1.1.0",
     "file-loader": "^1.1.11",
     "font-awesome": "^4.7.0",
+    "fs": "0.0.1-security",
     "graphql-tag": "^2.9.2",
+    "html-webpack-inline-source-plugin": "^0.0.10",
+    "html-webpack-plugin": "^3.2.0",
     "import-inspector": "^2.0.0",
     "jest": "^23.4.2",
+    "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.9.2",
     "node-sass-chokidar": "^1.2.2",
     "nodemon": "^1.18.3",
     "npm": "^6.1.0",
     "npm-run-all": "^4.1.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "popper.js": "^1.14.3",
+    "postcss-scss": "^2.0.0",
     "react": "^16.3.2",
-    "react-apollo": "^2.1.4",
+    "react-apollo": "^2.2.4",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.2",
     "react-froala-wysiwyg": "^2.8.1",
+    "react-helmet": "^5.2.0",
     "react-jsx-parser": "^1.3.5",
     "react-loadable": "^5.4.0",
     "react-redux": "^5.0.7",
@@ -58,26 +104,63 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^7.0.3",
+    "style-loader": "^0.23.1",
     "styled-components": "^3.3.2",
     "unfetch": "^3.1.1",
     "url-loader": "^1.0.1",
     "uuid": "^3.2.1",
     "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-merge": "^4.1.4",
+    "workbox-webpack-plugin": "^3.6.2",
+    "wysiwyg-editor-node-sdk": "^2.3.4"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules ./src/index.scss -o ./src",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules --watch ./src/App.scss ./src/App.css ./src/index.scss ./src/index.css",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build-js": "react-scripts build",
-    "build": "npm-run-all build-css build-js",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "server": "npm install && node index.js",
-    "prod": "npm i && npm-run-all build server"
+    "postinstall": "npm run transpile",
+    "start:lib": "better-npm-run lib-watch",
+    "start:server": "better-npm-run start:server",
+    "start": "npm-run-all -p start:lib start:server",
+    "build:server": "babel server-env.js --out-file server.js",
+    "build:client": "webpack -p --config webpack.prod.js --progress",
+    "build": "better-npm-run build",
+    "transpile": "better-npm-run transpile"
   },
-  "devDependencies": {
-    "babel-plugin-transform-class-properties": "^6.24.1"
+  "betterScripts": {
+    "transpile": {
+      "command": "babel node_modules/@material --presets env,react -d node_modules/@material && babel node_modules/apollo-link --presets env,react -d node_modules/apollo-link && babel node_modules/react-apollo --ignore node_modules/react-apollo/node_modules --presets env,react -d node_modules/react-apollo"
+    },
+    "start:server": {
+      "command": "nodemon server-env.js --ignore lib --ignore dist --watch server-env.js --watch api.js --exec babel-node --presets env,react",
+      "env": {
+        "NODE_ENV": "dev"
+      }
+    },
+    "lib": {
+      "command": "babel ./src -d ./lib",
+      "env": {
+        "BABEL_ENV": "lib"
+      }
+    },
+    "lib-watch": {
+      "command": "babel ./src --watch -d ./lib",
+      "env": {
+        "BABEL_ENV": "lib_dev"
+      }
+    },
+    "build": {
+      "command": "better-npm-run lib && better-npm-run build:server && npm run build:client",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "build:server": {
+      "command": "babel server-env.js --out-file server.js",
+      "env": {
+        "BABEL_ENV": "lib"
+      }
+    }
   }
 }

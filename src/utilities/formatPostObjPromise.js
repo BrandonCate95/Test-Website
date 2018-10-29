@@ -1,4 +1,4 @@
-import { Auth } from 'aws-amplify'
+import {Auth} from 'aws-amplify'
 import uuidv4 from 'uuid/v4'
 import getAllIndicesOfSubstring from './getAllIndicesOfSubstring'
 import getS3ImageKeyFromURL from './getS3ImageKeyFromURL'
